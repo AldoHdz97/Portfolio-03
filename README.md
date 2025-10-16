@@ -51,14 +51,24 @@ START → query_or_respond → [Decision: Need retrieval?]
 ### 1. Install Dependencies
 
 ```bash
-pip install langchain langchain-chroma chromadb
-pip install langchain-google-community[drive]
-pip install langchain-openai langgraph
-pip install openai anthropic
-pip install numpy scikit-learn plotly
-pip install gradio nest_asyncio
-pip install PyPDF2
-pip install python-dotenv
+# Core dependencies
+%pip install python-dotenv
+
+# LangChain ecosystem
+%pip install langchain
+%pip install langchain-openai
+%pip install langchain-chroma
+%pip install langchain-google-community[drive]
+
+# Vector store
+%pip install chromadb
+
+# LLM APIs
+%pip install openai
+%pip install anthropic
+
+# LangGraph
+%pip install langgraph
 ```
 
 ### 2. Google Drive API Setup
@@ -91,7 +101,7 @@ LANGCHAIN_API_KEY=your_langchain_key  # Optional - for tracing
 
 Find this line:
 ```python
-persist_directory="C:\\Users\\aldoh\\Documents\\Projects\\llm-project-2\\drive_vectors"
+persist_directory="C:...drive_vectors"
 ```
 
 Change to your path:
@@ -387,5 +397,6 @@ Get everything in one go - no manual folder navigation needed.
 - Works offline after initial document loading
 
 ---
+
 
 **Questions?** Check LangGraph docs or adjust agent prompts in the notebook.
